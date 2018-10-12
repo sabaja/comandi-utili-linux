@@ -584,19 +584,29 @@ mvn spring-boot:run --debug
 #per esereguire un test
 ./mvnw test -Dtest=RandomGeneratorServiceImplTest
 
+#per lanciare una applicazione spring boot
+mvnw spring-boot:run
 
 GIT
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # conoscere tutte le variabili di configurazione locali.
 git config -l
 
-# Lo strumento essenziale per guardare cos'è successo nel passato è il comando
+# Lo strumento essenziale per guardare cos'è successo nel passato è il comando (stato dei commit)
 git log
 git log --pretty
 git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen (%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
 #Inizializzare un repository
 git init
+
+#aggiungere un file modificato
+git add <nomefile> 
+#oppure per aggiungere tutte le modifiche al repository
+git add . 
+
+#per vedere le modifiche
+git diff
 
 #Before push to confirm the changes
 git commit -m "Messaggio per la commit"
@@ -619,6 +629,7 @@ git fetch https://github.com/sabaja/own-social-multiplication.git
 
 #effettua il merge in locale degli aggiornamenti scaricati da remoto con il comando git fetch.
 git merge
+
 
 #Vedere le modifiche prima di fare pull dal 
 git diff master origin/master
