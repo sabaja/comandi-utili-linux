@@ -98,6 +98,9 @@ touch primo.sh
 #Per vedere processi attivi
 ps -aux | more
 
+#To know all the processes and correspondingly their assigned pid, run.
+ps -A
+
 #Per vedere processi attivi in real time
 top
 
@@ -106,6 +109,9 @@ htop
 
 #Per vedere alberatura dei processi
 pstree
+
+#Uccidere un processo
+kill -9 13209
 
 #Kill zombie process
 kill $(ps -A -ostat,ppid | awk '/[zZ]/{print $2}')
