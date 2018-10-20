@@ -389,6 +389,25 @@ EMERGENCY MODE
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 https://medium.com/@nehamuthiyan/getting-out-of-the-emergency-mode-in-ubuntu-818180ce3940
 
+$ journalctl -xb
+#scorrere le pagine fino a raggiungere la partizione rovinata, nel mio caso /dev/sda3, si nota perchè l'errore è in rosso
+#dopo di che riavviare il pc da chiavetta o dvd "bootable" con qualsiasi versione di ubuntu .
+
+#avviare il terminale:
+ctrl-alt-t
+
+#scaricare e2fsck
+wget http://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.43.1/e2fsprogs-1.43.1.tar.gz
+
+#dopo di che:
+tar xzf e2fsprogs-1.43.1.tar.gz
+cd e2fsprogs-1.43.1
+./configure
+make
+cd e2fsck/
+sudo ./e2fsck -y <corrupt filesystem name> 
+nel mio caso: sudo ./e2fsck -y /dev/sda3
+
 
 18.04
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -659,6 +678,12 @@ git checkout master
 
 Cancella il branch creato in precedenza:
 $ git branch -d develop
+
+copiare un repository esistente:
+git clone https://github.com/sabaja/own-social-multiplication
+
+copiare un branch particolare tipo develop
+git clone -b develop https://github.com/sabaja/own-social-multiplication
 
 BOOTCHART
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
