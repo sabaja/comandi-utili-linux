@@ -227,8 +227,15 @@ dpkg -s mysql
 #https://linuxprograms.wordpress.com/2010/05/11/status-dpkg-list/
 dpkg --list
 
+a) to restart:
+sudo shutdown -v -r now
 
+b) to shutdown:
 shutdown now
+sudo shutdown -v -h now
+
+c) to shutdown but stop the shutdown process allowing you to read the verbose output:
+sudo shutdown -v now
 
 First character: The possible value for the first character. The first character signifies the desired state, like we (or some user) is marking the package for installation
 
