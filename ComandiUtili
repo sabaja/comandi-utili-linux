@@ -160,6 +160,9 @@ ls -t | sed -e '1,10d' | xargs -d '\n' rm
 #cercare con grep una stringa e visualizzare 2 riga prima e dopo
 grep -A 2  "hibernate-jpa-" pom.xml
 
+#cercare una stringa nelle sottocartelle
+grep -r -i "stringa da ricercare" /path/della/cartella/
+
 #aggiorna i pacchetti alla versione più recente
 apt upgrade 
 
