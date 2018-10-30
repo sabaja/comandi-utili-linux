@@ -95,6 +95,10 @@ sudo tail -f /var/log/syslog
 # creare un file
 touch primo.sh
 
+# creare un file con contenuto dentro
+echo "# procedura-home-18.04" >> README.md
+
+
 #Per vedere processi attivi
 ps -aux | more
 
