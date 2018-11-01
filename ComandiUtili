@@ -587,6 +587,15 @@ E.g.: sudo apt install oracle-java9-set-default.
 directory java:
 /usr/lib/jvm/java-8-oracle
 
+Versione:
+java -version
+
+la lista completa dei JDK installati tramite il comando:
+update-alternatives --list java
+
+scegliere quale JDK utilizzare di default lanciando da terminale il seguente comando:
+update-alternatives --config java
+
 
 HP Stampante
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
