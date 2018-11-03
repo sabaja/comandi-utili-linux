@@ -450,6 +450,27 @@ Now 1>&2 will redirect the file descriptor 1 to STDERR
 and 2>&3 will redirect file descriptor 2 to 3 which is STDOUT.
 The & is needed to tell the shell you mean a file descriptor, not a file name
 
+https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file:
+
+redirect the output to a file:
+SomeCommand > SomeFile.txt  
+
+append data:
+SomeCommand >> SomeFile.txt
+
+If you want stderr as well use this:
+SomeCommand &> SomeFile.txt 
+
+or this to append:
+SomeCommand &>> SomeFile.txt  
+
+if you want to have both stderr and output displayed on the console and in a file use this:
+SomeCommand 2>&1 | tee SomeFile.txt
+
+(If you want the output only, drop the 2 above)
+
+https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file
+
 USER MANAGEMENTS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # create user called "newuser" with home directory
@@ -596,6 +617,12 @@ update-alternatives --list java
 scegliere quale JDK utilizzare di default lanciando da terminale il seguente comando:
 update-alternatives --config java
 
+Settare JAVA_HOME:
+sudo nano /etc/environment
+
+echo $JAVA_HOME
+
+JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 
 HP Stampante
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
