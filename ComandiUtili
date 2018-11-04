@@ -428,9 +428,11 @@ nel mio caso: sudo ./e2fsck -y /dev/sda3
 #alternativa a gksudo:
 sudo su -
 
-dopo startere la app:
+#dopo startere la app:
 gparted
 
+#Nautilus admin
+sudo nautilus -q
 
 STANDARD-OUT/IN
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -596,7 +598,6 @@ keytool -list -keystore .keystore
 
 #if you are looking for a specific alias, you can also specify it in the command:
 keytool -list -keystore .keystore -alias foo
-
 
 
 JAVA
@@ -800,6 +801,11 @@ che adesso sono sulla scrivania.
 TLP PER VENTOLA 16.04
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 https://askubuntu.com/questions/516067/persistent-high-fan-speed-ubuntu-14-04
+
+
+IMMAGINI DESKTOP
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/usr/share/backgrounds
 
 
 MONGODB:
