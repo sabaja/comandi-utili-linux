@@ -727,6 +727,15 @@ git push origin develop
 #Ritorna di nuovo su master:
 git checkout master
 
+#Confirm you are now working on that branch:
+git branch
+
+#Lista Checkout branch
+git branch -a
+
+#Checkout the branch you want to use.
+git checkout <feature_branch>
+
 Cancella il branch creato in precedenza:
 $ git branch -d develop
 
