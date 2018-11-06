@@ -99,6 +99,18 @@ touch primo.sh
 echo "# procedura-home-18.04" >> README.md
 
 
+#processi attivi
+Each unix process has two ID numbers assigned to it: The Process ID (pid) and the Parent process ID (ppid). Each user process in the system has a parent process.
+ps
+
+-a Shows information about all users
+-x Shows information about processes without terminals
+-u Shows additional information like -f option
+-e Displays extended information
+
+#tutti i processi -f (full)
+ps -f
+
 #Per vedere processi attivi
 ps -aux | more
 
@@ -114,11 +126,18 @@ htop
 #Per vedere alberatura dei processi
 pstree
 
+#Kill all processes you can kill.
+kill -9 -1
+
 #Uccidere un processo
 kill -9 13209
 
 #Kill zombie process
 kill $(ps -A -ostat,ppid | awk '/[zZ]/{print $2}')
+
+#Background Processes
+#The simplest way to start a background process is to add an ampersand (&) at the end of the command.
+ls -l &
 
 #Tar
 https://www.computerhope.com/unix/utar.htm
@@ -161,11 +180,29 @@ find . -type f -name "*.class" -exec rm -vf {} \;
 
 ls -t | sed -e '1,10d' | xargs -d '\n' rm
 
+#Utilizzare grep per cercare solo i file di ottobre
+ls -ll | grep ott
+
 #cercare con grep una stringa e visualizzare 2 riga prima e dopo
 grep -A 2  "hibernate-jpa-" pom.xml
 
 #cercare una stringa nelle sottocartelle
 grep -r -i "stringa da ricercare" /path/della/cartella/
+
+https://www.tutorialspoint.com/unix/unix-pipes-filters.htm
+#grep + sort + more
+ls -l | grep "nov" | sort +4n
+ls -l | grep "Aug" | sort +4n | more
+
+GREP:
+-v Prints all lines that do not match pattern.
+-n Prints the matched line and its line number.
+-l Prints only the names of files with matching lines (letter "l")
+-c Prints only the count of matching lines.
+-i Matches either upper or lowercase.
+
+#grep to find lines with "carol", followed by zero or other characters abbreviated in a regular expression as ".*"), then followed by "Aug".−
+ls -l | grep -i "carol.*aug"
 
 #aggiorna i pacchetti alla versione più recente
 apt upgrade 
