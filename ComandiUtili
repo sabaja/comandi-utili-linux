@@ -465,6 +465,9 @@ nel mio caso: sudo ./e2fsck -y /dev/sda3
 #alternativa a gksudo:
 sudo su -
 
+da settare sempre 
+xhost si:localuser:root
+
 #dopo startere la app:
 gparted
 
@@ -1090,6 +1093,27 @@ sha256:ab035e7afa47738710ccfd5ce8ad8a361e7279b604444b98dcd29ff7a2e88a4b
 
 DA CONTINUARE continue:
 Step 8 — Pushing Docker Images to a Docker Repository
+
+ZIPKIN
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Per scaricare:
+curl -sSL https://zipkin.io/quickstart.sh | bash -s
+
+per laciarlo:
+java -jar zipkin.jar
+
+per visualizzare:
+http://your_host:9411 to find traces!
+
+
+Running from Source:
+# get the latest source
+git clone https://github.com/openzipkin/zipkin
+cd zipkin
+# Build the server and also make its dependencies
+./mvnw -DskipTests --also-make -pl zipkin-server clean install
+# Run the server
+java -jar ./zipkin-server/target/zipkin-server-*exec.jar
 
 
 
