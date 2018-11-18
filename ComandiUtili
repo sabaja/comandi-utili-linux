@@ -621,49 +621,7 @@ mysqldump -u user -p db_da_copiare > backup.sql
 mysql -u user -p < backup.sql
 
 
-CERT - JAVA
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Aprire portcecle Keytool:
-Andate nella directory creata e fate partire Portecle usando il comando
-java -jar portecle.jar
 
-directory certificati:
-/home/sabaja/.keystore
-
-per creare un certificato tomcat:
-keytool -genkey -alias tomcat -keyalg RSA -storepass changeit -keypass changeit -dname 'CN=tomcat'
-
-#You can run the following command to list the content of your keystore file:
-keytool -list -keystore .keystore
-
-#if you are looking for a specific alias, you can also specify it in the command:
-keytool -list -keystore .keystore -alias foo
-
-
-JAVA
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-per settare java 9 come default:
-To set Oracle JDK9 as default, install the "oracle-java9-set-default" package.
-E.g.: sudo apt install oracle-java9-set-default.
-
-directory java:
-/usr/lib/jvm/java-8-oracle
-
-Versione:
-java -version
-
-la lista completa dei JDK installati tramite il comando:
-update-alternatives --list java
-
-scegliere quale JDK utilizzare di default lanciando da terminale il seguente comando:
-update-alternatives --config java
-
-Settare JAVA_HOME:
-sudo nano /etc/environment
-
-echo $JAVA_HOME
-
-JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 
 HP Stampante
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -739,6 +697,8 @@ git pull origin master
 git remote add origin https://github.com/sabaja/ticket-management.git
 git push -u origin master
 
+#creare un nuovo branch develop e scaricarlo da remote
+git checkout -b develop origin/develop
 
 #force
 git push -f origin https://github.com/sabaja/jpa-spring-rest
@@ -751,7 +711,6 @@ git fetch https://github.com/sabaja/own-social-multiplication.git
 
 #effettua il merge in locale degli aggiornamenti scaricati da remoto con il comando git fetch.
 git merge
-
 
 #Vedere le modifiche prima di fare pull dal 
 git diff master origin/master
@@ -773,6 +732,7 @@ git push origin :gamification_feature_1.0.0
 git push --set-upstream origin new_branch   # Push the new branch, set local branch to track the new remote
 git push --set-upstream origin gamification_microservice
 ---
+
 ****
 Aggiornare branch locale con brach remoto:
 git pull origin master
@@ -813,11 +773,14 @@ git clone https://github.com/sabaja/own-social-multiplication
 copiare un branch particolare tipo develop
 git clone -b develop https://github.com/sabaja/own-social-multiplication
 
+----------
 Delete a local and a remote GIT branch
 https://koukia.ca/delete-a-local-and-a-remote-git-branch-61df0b10d323
 https://stackoverflow.com/questions/2003505/how-do-i-delete-a-git-branch-both-locally-and-remotely
+git branch -d branch_name
+git branch -D branch_name
+----------
 
---Portare t
 --How do I commit only some files?
 You commit only the changed files by:
 
@@ -837,6 +800,20 @@ git cherry-pick <commit-id>   # pick a commit from ANY branch and apply it to th
 
 git checkout <first-project>  # change to the other branch
 git stash pop                 # restore all changes again
+
+
+--Come ritornare indietro a un commit:
+https://www.git-tower.com/learn/git/faq/restore-repo-to-previous-revision
+1-vedere log history
+git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen (%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+--non tiene history
+git reset --hard 0ad5a7a6
+--tiene history
+git reset --soft 0ad5a7a6
+
+--mettere in un branch nuovo il vecchio branch
+git checkout -b old-project-state 0ad5a7a6
+
 
 BOOTCHART
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1114,6 +1091,50 @@ cd zipkin
 ./mvnw -DskipTests --also-make -pl zipkin-server clean install
 # Run the server
 java -jar ./zipkin-server/target/zipkin-server-*exec.jar
+
+CERT - JAVA
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Aprire portcecle Keytool:
+Andate nella directory creata e fate partire Portecle usando il comando
+java -jar portecle.jar
+
+directory certificati:
+/home/sabaja/.keystore
+
+per creare un certificato tomcat:
+keytool -genkey -alias tomcat -keyalg RSA -storepass changeit -keypass changeit -dname 'CN=tomcat'
+
+#You can run the following command to list the content of your keystore file:
+keytool -list -keystore .keystore
+
+#if you are looking for a specific alias, you can also specify it in the command:
+keytool -list -keystore .keystore -alias foo
+
+
+JAVA
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+per settare java 9 come default:
+To set Oracle JDK9 as default, install the "oracle-java9-set-default" package.
+E.g.: sudo apt install oracle-java9-set-default.
+
+directory java:
+/usr/lib/jvm/java-8-oracle
+
+Versione:
+java -version
+
+la lista completa dei JDK installati tramite il comando:
+update-alternatives --list java
+
+scegliere quale JDK utilizzare di default lanciando da terminale il seguente comando:
+update-alternatives --config java
+
+Settare JAVA_HOME:
+sudo nano /etc/environment
+
+echo $JAVA_HOME
+
+JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 
 
 
