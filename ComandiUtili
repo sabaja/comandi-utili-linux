@@ -270,6 +270,8 @@ dpkg -s mysql
 #lista di tutti i package 
 #https://linuxprograms.wordpress.com/2010/05/11/status-dpkg-list/
 dpkg --list
+#lista di tutte le policy dei package 
+sudo apt-cache policy
 
 a) to restart:
 sudo shutdown -v -r now
@@ -1137,4 +1139,35 @@ echo $JAVA_HOME
 JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 
 
+RabbitMQ
+https://www.rabbitmq.com/install-debian.html
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Start rabbitmq
+service rabbitmq-server start
 
+#Stop rabbitmq-server
+sudo rabbitmqctl stop 
+
+#Status rabbitmq-server
+sudo rabbitmqctl status
+
+#Broker user:
+guest
+#Broker pass:
+guest
+
+#Output from the server is sent to a RABBITMQ_NODENAME.log file in the RABBITMQ_LOG_BASE directory. 
+Additional log data is written to RABBITMQ_NODENAME-sasl.log.
+
+#RabbitMQ management
+https://www.rabbitmq.com/management.html
+#abilitare management:
+sudo rabbitmq-plugins enable rabbitmq_management
+
+#Broker user:
+guest
+#Broker pass:
+guest
+
+RabbitMQ management console:
+http://localhost:15672/
