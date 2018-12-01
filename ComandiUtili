@@ -1139,11 +1139,40 @@ echo $JAVA_HOME
 JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 
 
+ZipKin
+https://zipkin.io/pages/quickstart
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Ubuntu:
+
+#Running from Docker
+docker run -d -p 9411:9411 openzipkin/zipkin
+
+##Running from Java
+cd ~/Scrivania/Dev-space
+java -jar zipkin.jar
+
+##Running from source
+# get the latest source
+git clone https://github.com/openzipkin/zipkin
+cd zipkin
+
+# Build the server and also make its dependencies
+./mvnw -DskipTests --also-make -pl zipkin-server clean install
+
+# Run the server
+java -jar ./zipkin-server/target/zipkin-server-*exec.jar
+
+#Regardless of how you start Zipkin, browse to 
+
+http://localhost:9411 
+
+
+
 RabbitMQ
 https://www.rabbitmq.com/install-debian.html
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Start rabbitmq
-service rabbitmq-server start
+sudo service rabbitmq-server start
 
 #Stop rabbitmq-server
 sudo rabbitmqctl stop 
