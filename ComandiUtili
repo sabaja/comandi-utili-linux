@@ -35,7 +35,7 @@ cut
 
 # per rendere un file eseguibile settiamo i permessi del file in questo modo:
 # https://www.tutorialspoint.com/unix/unix-file-permission.htm
-chmod +x filename.sh
+chmod +rx filename.sh
 
 # https://www.tutorialspoint.com/unix/unix-file-permission.htm
 chmod o+wx, u-x, g = rx testfile
