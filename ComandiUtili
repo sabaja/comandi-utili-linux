@@ -399,6 +399,9 @@ curl -o ubuntu-18.04 http://releases.ubuntu.com/18.04/ubuntu-18.04-desktop-amd64
 #vedere response curl
 curl --verbose http://localhost:8080/greeting
 
+#curl con Header type json
+curl -X POST -H "Content-Type: application/json" -d '{"user":{"alias":"moises"},"multiplication":{"factorA":"42","factorB":"10"},"resultAttempt":"420"}' http://localhost:8080/results
+
 #disinstallare un applicazione
 sudo apt remove --purge imagemagick
 
