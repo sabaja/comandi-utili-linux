@@ -723,6 +723,13 @@ git pull https://github.com/sabaja/own-social-multiplication.git
 #Crea un nuovo branch chiamato «develop» e passa al nuovo branch usando:
 git checkout -b develop
 
+#Fare merge da develop a master
+#(on branch development)
+git merge master #(resolve any merge conflicts if there are any)
+
+git checkout master
+git merge development #(there won't be any conflicts now)
+
 ----
 rename git branch locally and remotely
 git branch -m old_branch new_branch         # Rename branch locally    
@@ -1143,7 +1150,6 @@ ZipKin
 https://zipkin.io/pages/quickstart
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Ubuntu:
-
 #Running from Docker
 docker run -d -p 9411:9411 openzipkin/zipkin
 
@@ -1165,7 +1171,6 @@ java -jar ./zipkin-server/target/zipkin-server-*exec.jar
 #Regardless of how you start Zipkin, browse to 
 
 http://localhost:9411 
-
 
 
 RabbitMQ
@@ -1200,3 +1205,16 @@ guest
 
 RabbitMQ management console:
 http://localhost:15672/
+
+#RabbitMQ
+--------------------------------------------
+#Windows:
+cd C:\Program Files\RabbitMQ Server\rabbitmq_server-3.7.9\sbin
+
+# Run the following command to enable the plugin:
+rabbitmq-plugins.bat enable rabbitmq_management
+
+#Then, re-install the RabbitMQ service using the commands below:
+rabbitmq-service.bat stop  
+rabbitmq-service.bat install  
+rabbitmq-service.bat start 
