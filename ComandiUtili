@@ -239,6 +239,8 @@ dmesg >> dmesg.txt
 #Come vedere le caratteristiche del PC
 sudo lshw -short
 sudo lspci
+sudo lspci -v 
+sudo lspci -v | less
 sudo lsusb
 sudo lscpu
 sudo dmidecode
