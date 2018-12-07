@@ -240,7 +240,6 @@ dmesg >> dmesg.txt
 sudo lshw -short
 sudo lspci
 sudo lspci -v 
-sudo lspci -v | less
 sudo lsusb
 sudo lscpu
 sudo dmidecode
@@ -256,6 +255,13 @@ https://wiki.debian.org/it/SourcesList
 sudo software-properties-gtk
 
 # aggiornare tutti i pacchetti all'ultima versione disponibile nel repository
+sudo lspci -v | less
+
+a) to restart:
+sudo shutdown -v -r now
+
+b) to shutdown:
+shutdown now
 sudo apt dist-upgrade 
 
 #per installare un pacchetto debian	
@@ -274,12 +280,6 @@ dpkg -s mysql
 dpkg --list
 #lista di tutte le policy dei package 
 sudo apt-cache policy
-
-a) to restart:
-sudo shutdown -v -r now
-
-b) to shutdown:
-shutdown now
 sudo shutdown -v -h now
 
 c) to shutdown but stop the shutdown process allowing you to read the verbose output:
@@ -1223,3 +1223,11 @@ rabbitmq-plugins.bat enable rabbitmq_management
 rabbitmq-service.bat stop  
 rabbitmq-service.bat install  
 rabbitmq-service.bat start 
+
+#Wireshrak on 18.04
+Now if you selected <Yes> in the earlier section to run Wireshark without root access, then run the following command to add your user to the wireshark group:
+sudo usermod -aG wireshark $(whoami)
+sudo reboot
+
+Now that Wireshark is installed, you can start Wireshark from the Application Menu of Ubuntu.
+$ wireshark
