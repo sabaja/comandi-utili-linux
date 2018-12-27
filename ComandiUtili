@@ -443,6 +443,22 @@ unset [ nome variabile ]
 #Posizione GRUB
 cat /etc/default/grub
 
+## To find a user’s UID (user ID) or GID (group ID) 
+#1 Get User name and real user ID
+#2 Find a specific user’s UID
+#3 List out all the groups a user belongs to
+#4 Show the UID and all groups associated with a user
+#5 Display security context of the current user
+#6 Effective Linux or Unix user name and effective user ID (UID)
+#7 Name of effective Linux or Unix user’s group and effective group ID (GID)
+
+id -nG
+
+# How do I find a specific user’s UID?
+id -u {UserNameHere}
+id -u vivek
+
+
 EMERGENCY MODE
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 https://medium.com/@nehamuthiyan/getting-out-of-the-emergency-mode-in-ubuntu-818180ce3940
@@ -1148,7 +1164,9 @@ sudo nano /etc/environment
 
 echo $JAVA_HOME
 
-JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
+JAVA_HOME="/usr/lib/jvm/java-11-oracle"
+
+JRE = /usr/lib/jvm/java-11-oracle/lib/jrt-fs.jar
 
 
 ZipKin
@@ -1189,6 +1207,9 @@ sudo rabbitmqctl stop
 
 #Status rabbitmq-server
 sudo rabbitmqctl status
+
+#Listing queues
+sudo rabbitmqctl list_queues
 
 #Broker user:
 guest
