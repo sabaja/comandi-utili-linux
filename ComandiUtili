@@ -697,6 +697,8 @@ git config -l
 # Lo strumento essenziale per guardare cos'è successo nel passato è il comando (stato dei commit)
 git log
 git log --pretty
+#semplificare la visualizzazione
+git log --oneline
 git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen (%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
 #Inizializzare un repository
@@ -811,6 +813,7 @@ git branch -d branch_name
 git branch -D branch_name
 ----------
 
+
 --How do I commit only some files?
 You commit only the changed files by:
 
@@ -834,6 +837,7 @@ git stash pop                 # restore all changes again
 
 --Come ritornare indietro a un commit:
 https://www.git-tower.com/learn/git/faq/restore-repo-to-previous-revision
+https://stackoverflow.com/questions/4114095/how-to-revert-a-git-repository-to-a-previous-commit
 1-vedere log history
 git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen (%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 --non tiene history
