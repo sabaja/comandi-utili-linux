@@ -422,6 +422,8 @@ alias start_mong='sudo service mongod start'
 
 #but if you are impatient like me and just want it installed now, you can just source the file:
 source ~/.bashrc
+#Per variabili ambiente
+source /etc/environment
 	
 #Per visualizzare il valore registrato in una variabile di ambiente, si utilizza il comando echo.
 echo $+[nome variabile] - echo $PWD
@@ -1256,6 +1258,26 @@ sudo reboot
 
 Now that Wireshark is installed, you can start Wireshark from the Application Menu of Ubuntu.
 $ wireshark
+
+
+#JETTY
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+http://zetcode.com/java/jetty/install/
+
+JETTY HOME: /opt/jetty
+
+A new jetty user and group are added to the system. Jetty will run under this user on the system. Setting the user's shell to /bin/false has the affect of not allowing someone to log in under this username:
+sudo useradd --user-group --shell /bin/false --home-dir /opt/jetty/temp jetty
+
+/opt/jetty/web/base will hold the Jetty base, 
+/opt/jetty/temp will be used for temporary files of Jetty.
+
+Cambiare utenza cartelle
+sudo chown -R jetty:jetty /opt/jetty/web/base
+sudo chown -R jetty:jetty /opt/jetty
+
+Modifichiamo la proprietà dell'utente e del gruppo per i file e le directory rilevanti per Jetty. L'opzione -R opera in modo ricorsivo su file e directory, il che significa che la proprietà viene modificata per tutte le directory e i file nelle directory madri.
+
 
 #AON Assicurazione
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
