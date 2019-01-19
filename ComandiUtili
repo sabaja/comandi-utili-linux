@@ -1278,6 +1278,9 @@ sudo chown -R jetty:jetty /opt/jetty
 
 Modifichiamo la proprietà dell'utente e del gruppo per i file e le directory rilevanti per Jetty. L'opzione -R opera in modo ricorsivo su file e directory, il che significa che la proprietà viene modificata per tutte le directory e i file nelle directory madri.
 
+jetty start: sudo service jetty start
+
+java -jar /opt/jetty/start.jar --add-to-start=http,deploy,resources,ext,jmx,requestlog,console-capture,annotations,jsp
 
 #AON Assicurazione
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
