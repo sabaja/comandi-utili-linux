@@ -1282,6 +1282,9 @@ jetty start: sudo service jetty start
 
 java -jar /opt/jetty/start.jar --add-to-start=http,deploy,resources,ext,jmx,requestlog,console-capture,annotations,jsp
 
+funziona start:
+java -jar $JETTY_HOME/start.jar
+
 #AON Assicurazione
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Utenza: W0171630
