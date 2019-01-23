@@ -6,13 +6,12 @@ echo -n "Come ti chiami? "
 #leggo dallo standard input il valore digitato 
 #dall'utente e lo assegno alla variabile TUO_NOME
 read TUO_NOME
-
-echo "Quanti anni hai? "
-read YEAR
-
+echo Come ti chiami?
+read NOME
+echo "Ciao $NOME - tutto ok?"
 
 #Stampo a video il saluto personalizzato
-echo "Ciao "${TUO_NOME} " int: " ${YEAR}
+echo "Ciao "${TUO_NOME} " int: " ${INT}
 
 #svuotare una variabile del suo contenuto useremo:
 unset TUO_NOME
