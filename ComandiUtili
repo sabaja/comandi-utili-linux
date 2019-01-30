@@ -357,14 +357,24 @@ rm *.class
 
 # Create a new soft link via
 ln -s target link
+ln -s file1 link1
 
 # For example
 ln -s ~/workspace/e4-dev e4tools
+
+#To verify new soft link run
+ls -l file1 link1
+
 
 virgolette con accenti gravi (backtick [ Alt-Gr + ’ = ` ]). Vedi esempio:
 #!/bin/sh
 OGGI=`date +%D`
 echo "la data di oggi è "${OGGI}
+
+backtick:
+https://unix.stackexchange.com/questions/27428/what-does-backquote-backtick-mean-in-commands
+https://unix.stackexchange.com/questions/5778/whats-the-difference-between-stuff-and-stuff
+
 
 #Adding Eclipse to the launcher
 gedit ~/.local/share/applications/eclipse.desktop
