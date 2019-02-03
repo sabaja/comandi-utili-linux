@@ -1311,6 +1311,21 @@ java -jar $JETTY_HOME/start.jar
 If you want to see what the Jetty base looks like without executing Jetty, you can simply list the configuration by using the --list-config command.
 java -jar $JETTY_HOME/start.jar --list-config
 
+Help console:
+help, h, ? <arg>    Shows a list of commands and provides help for each command.
+memory, m <arg>     Memory utilities.
+thread, t <arg>     Thread information.
+prop, p <arg>       Manage system properties.
+echo, e <arg>       Prints the text.
+mbean, mb <arg>     Access local MBeans.
+open, o             Opens a browser.
+dump, d             Dump the state of Jetty.
+info, i             Show the launcher info.
+restart, r          Restarts the server.
+stop, s             Stops the server gracefully.
+exit, x             Exits the VM.
+
+
 #AON Assicurazione
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Utenza: W0171630
