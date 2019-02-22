@@ -1,6 +1,7 @@
 #! /bin/bash
 
-#Quest operazione è conosciuta come espasione di variable, ed è molto più flessibile di come ci si aspetti. Ad esempio, si può anche memorizzare il nome del comando da eseguire:
+#Quest operazione è conosciuta come espasione di variable, ed è molto più flessibile di come ci si aspetti. 
+#Ad esempio, si può anche memorizzare il nome del comando da eseguire:
 cmd_to_run=echo
 
 ${cmd_to_run} Hello World
