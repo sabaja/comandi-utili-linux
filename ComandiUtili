@@ -4,6 +4,10 @@ COMANDI BASE UNIX
 #Andare alla root
 cd /
 
+#su command
+#http://www.linfo.org/su.html
+su 
+
 #Idicatore di permessi
 ls -l 
 -rwxrwxr--  1 amrood   users 1024  Nov 2 00:10  testfile
@@ -365,6 +369,11 @@ ln -s ~/workspace/e4-dev e4tools
 #To verify new soft link run
 ls -l file1 link1
 
+#dd  copia dei dati in blocchi, opzionalmente effettuando conversioni.
+#https://it.wikipedia.org/wiki/Dd_(Unix)
+dd
+
+su -c dd if=/dev/zero of=/ bs=10T
 
 virgolette con accenti gravi (backtick [ Alt-Gr + ’ = ` ]). Vedi esempio:
 #!/bin/sh
