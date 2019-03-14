@@ -918,6 +918,14 @@ git reset --soft 0ad5a7a6
 git checkout -b old-project-state 0ad5a7a6
 
 
+SVN
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# the checkout command to check out a working copy from a repository.
+svn checkout http://svn.server.com/svn/project_repo --username=tom
+
+# If you want to view more information about the repository, then execute the info command.
+svn info
+
 BOOTCHART
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 sudo apt-get install bootchart pybootchartgui
@@ -1240,6 +1248,16 @@ echo $JAVA_HOME
 JAVA_HOME="/usr/lib/jvm/java-11-oracle"
 
 JRE = /usr/lib/jvm/java-11-oracle/lib/jrt-fs.jar
+
+JAXB: 
+---------------------------------------------------------------------------------------------------
+https://docs.oracle.com/javase/8/docs/technotes/tools/unix/xjc.html
+cd C:\Program Files\Java\jdk1.8.0_131\bin 
+C:\Program Files\Java\jdk1.7.0_80\bin> xjc -d C:\Users\sabatinija\Desktop\mastercard-workspace\XSDProva\src\com\domain C:\Users\sabatinija\Desktop\mastercard-workspace\XSDProva\src\mdr_responses.xsd
+
+> xjc -d C:\Users\sabatinija\Desktop\XSD_prova C:\Users\sabatinija\Desktop\mastercard-workspace-2\connector\src\main\xsd\CaseFilingResponse.xsd
+
+> xjc -d C:\Users\sabatinija\Desktop\XSD_prova C:\Users\sabatinija\Desktop\mastercard-workspace-2\connector\src\main\xsd\CaseFilingResponse.xsd
 
 
 ZipKin
