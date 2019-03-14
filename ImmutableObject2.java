@@ -12,7 +12,7 @@ import java.util.Map;
  * @author SabatiniJa
  *
  */
-public class ImmutableObject {
+public class ImmutableObject2 {
 
 	public static void main(String[] args) {
 		int index = 5;
