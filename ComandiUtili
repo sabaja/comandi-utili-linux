@@ -160,7 +160,7 @@ chown sabaja:sabaja mysql_original_back
 sudo apt remove vuze azureus && sudo apt autoremove
 
 #First, this command will find and delete all files older than 7 days in any subdirectory in /home whose name starts with securityuser:
-
+# https://www.cyberciti.biz/faq/howto-find-a-directory-linux-command/
 find '/home/securityuser*' -mtime +6 -type f -delete
 
 find ./dirc/* -mtime +6 -type f -delete
@@ -179,6 +179,9 @@ find / -name .bashrc -type f -print
 
 # find all files which ends with .class recursive in all directories below the current one and delete them
 find . -type f -name "*.class" -exec rm -vf {} \;
+
+# find a directory
+find . -type d -name "ojdbc7"
 
 #come cancellare i file + vecchi di una certa data
 #https://stackoverflow.com/questions/2960022/shell-script-to-count-files-then-remove-oldest-files?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
