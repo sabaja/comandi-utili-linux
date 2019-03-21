@@ -543,6 +543,24 @@ cd e2fsck/
 sudo ./e2fsck -y <corrupt filesystem name> 
 nel mio caso: sudo ./e2fsck -y /dev/sda3
 
+# sudo command  (sudo su, sudo su -, sudo -i ) https://askubuntu.com/questions/376199/sudo-su-vs-sudo-i-vs-sudo-bin-bash-when-does-it-matter-which-is-used
+sudo su -  
+# The command su is used to switch to another user (s witch u ser), 
+# but you can also switch to the root user by invoking the command with no parameter. 
+# su asks you for the password of the user to switch, 
+# after typing the password you switched to the user's environment.
+
+sudo - sudo 
+# is meant to run a single command with root privileges. 
+# But unlike su it prompts you for the password of the current user. 
+# This user must be in the sudoers file (or a group that is in the sudoers file). 
+# By default, Ubuntu "remembers" your password for 15 minutes, 
+# so that you don't have to type your password every time.
+
+sudo 
+# bash - A text-interface to interact with the computer. 
+# It's important to understand the difference between login, non-login, 
+# interactive and non-interactive shells:
 
 18.04
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
