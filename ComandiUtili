@@ -218,7 +218,7 @@ apt upgrade
 #oltre a fare quello che fa upgrade, aggiorna anche i pacchetti per i quali le dipendenze sono cambiate
 apt dist-upgrade 
 
-
+#per gestire i Package
 #To install a downloaded Debian (Ubuntu) package (.deb): Open Terminal and type
 sudo dpkg -i packagename.deb
 
@@ -227,6 +227,12 @@ sudo dpkg -r packagename
 
 #To Reconfigure/Repair an installed Debian (Ubuntu) package (.deb):
 sudo dpkg-reconfigure packagename
+
+#Applying Debian security updates only
+#Connect to your Debian system via SSH. Once you are in the terminal, enter the following commands:
+$ sudo grep security /etc/apt/sources.list | sudo tee /etc/apt/security.sources.list
+$ apt-get update
+$ apt-get upgrade -o Dir::Etc::SourceList=/etc/apt/security.sources.list
 
 #come cercare i pacchetti su ubunutu
 dpkg -l
