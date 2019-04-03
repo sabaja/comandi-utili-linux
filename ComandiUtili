@@ -953,6 +953,22 @@ svn checkout http://svn.server.com/svn/project_repo --username=tom
 # If you want to view more information about the repository, then execute the info command.
 svn info
 
+
+JENKINS
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+https://linuxize.com/post/how-to-install-jenkins-on-ubuntu-18-04/
+#install
+wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt update
+sudo apt install jenkins
+#Jenkins service will automatically start after the installation process is complete. You can verify it by printing the service status:
+systemctl status jenkins
+
+#remove
+sudo apt remove --purge jenkins
+sudo apt remove --auto-remove jenkins
+
 BOOTCHART
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 sudo apt-get install bootchart pybootchartgui
