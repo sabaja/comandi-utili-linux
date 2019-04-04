@@ -489,6 +489,9 @@ id -nG
 id -u {UserNameHere}
 id -u vivek
 
+# per vedere su che porte sono attivi i servizi su linux
+cat /etc/services
+
 #Riepilogo principali comandi nix:
 
 cat      Utility to concatenate files to standard output
@@ -956,14 +959,26 @@ svn info
 
 JENKINS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-https://linuxize.com/post/how-to-install-jenkins-on-ubuntu-18-04/
+https://www.serverlab.ca/tutorials/linux/administration-linux/how-to-install-jenkins-on-ubuntu-18-04-bionic-beaver/
 #install
-wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
-sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+sudo apt-add-repository "deb https://pkg.jenkins.io/debian-stable binary/"
 sudo apt update
 sudo apt install jenkins
 #Jenkins service will automatically start after the installation process is complete. You can verify it by printing the service status:
 systemctl status jenkins
+
+#password jenkins
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword  :  87acde69c8384faea2905dace837f064
+
+#Utente:   root
+#Password: rootroot
+
+# go to /etc/default/jenkins and add --httpPort=9999 
+
+#restart
+sudo service jenkins restart
+
 
 #remove
 sudo apt remove --purge jenkins
