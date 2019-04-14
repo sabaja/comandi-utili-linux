@@ -742,6 +742,40 @@ mysqldump -u user -p db_da_copiare > backup.sql
 #Ripristino database
 mysql -u user -p < backup.sql
 
+To login (from unix shell) use -h only if needed.
+# [mysql dir]/bin/mysql -h hostname -u username -ppassword
+To login (from windows)
+mysql dir/bin/mysql.exe -h hostname -u username -ppassword
+
+#Create a database.
+mysql> create database [databasename];
+
+#List all databases on the server.
+mysql> show databases;
+
+#Switch to a database.
+mysql> use [db name];
+
+#To see all the tables in the db.
+mysql> show tables;
+
+#To see table's field formats.
+mysql> describe [table name];
+
+#To delete a db.
+mysql> drop database [database name];
+
+#To delete a table.
+mysql> drop table [table name];
+
+#Show all data from a table.
+mysql> SELECT * FROM [table name];
+
+#To return columns and column information.
+mysql> show columns from [table name];
+
+#Show particular rows with the given value.
+mysql> SELECT * FROM [table name] WHERE [field name] = "value";
 
 
 
