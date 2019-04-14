@@ -742,6 +742,9 @@ mysqldump -u user -p db_da_copiare > backup.sql
 #Ripristino database
 mysql -u user -p < backup.sql
 
+#To login
+mysql -u [username] -p [database]
+
 To login (from unix shell) use -h only if needed.
 # [mysql dir]/bin/mysql -h hostname -u username -ppassword
 To login (from windows)
