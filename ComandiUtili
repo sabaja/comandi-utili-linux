@@ -993,6 +993,18 @@ svn checkout http://svn.server.com/svn/project_repo --username=tom
 # If you want to view more information about the repository, then execute the info command.
 svn info
 
+#Fare checkout su progetto:
+-	Tasto destro mouse su cartella 
+-	SVN Checkout 
+-	Selezionare Trunk/Branches
+-	Premere ok
+
+#Commit:
+-	Tasto destro su branch (v3.3.8)
+-	Commit
+-	Selezionare le classi/oggetti da commitare
+-	Premere ok
+
 
 JENKINS
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
