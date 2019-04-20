@@ -848,6 +848,13 @@ git add .
 #per vedere le modifiche
 git diff
 
+#per vedere le modifiche
+git diff HEAD src/main/java/microservices/book/gateway/GatewayApplication.java
+
+git diff HEAD [filename] //  compare the working directory with local repository.
+git diff [filename] // compare the working directory with index.
+git diff --cached [filename] // compare the index with local repository.
+
 #Before push to confirm the changes
 git commit -m "Messaggio per la commit"
 
