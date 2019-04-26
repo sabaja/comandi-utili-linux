@@ -197,6 +197,9 @@ grep -A 2  "hibernate-jpa-" pom.xml
 #cercare una stringa nelle sottocartelle
 grep -r -i "stringa da ricercare" /path/della/cartella/
 
+#https://stackoverflow.com/questions/12516937/grep-but-only-certain-file-extensions
+grep -r -i --include=\*.java 'notes' ./
+
 https://www.tutorialspoint.com/unix/unix-pipes-filters.htm
 #grep + sort + more
 ls -l | grep "nov" | sort +4n
