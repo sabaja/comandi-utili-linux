@@ -199,6 +199,12 @@ grep -r -i "stringa da ricercare" /path/della/cartella/
 
 #https://stackoverflow.com/questions/12516937/grep-but-only-certain-file-extensions
 grep -r -i --include=\*.java 'notes' ./
+grep: command
+-r: recursively
+-i: ignore-case
+--include: all *.txt: text files (escape with \ just in case you have a directory with asterisks in the filenames)
+'searchterm': What to search
+./: Start at current directory.
 
 https://www.tutorialspoint.com/unix/unix-pipes-filters.htm
 #grep + sort + more
