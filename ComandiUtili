@@ -197,6 +197,17 @@ grep -A 2  "hibernate-jpa-" pom.xml
 #cercare una stringa nelle sottocartelle
 grep -r -i "stringa da ricercare" /path/della/cartella/
 
+#Grep solo nei file di un certo tipo come *.java *.txt etc...etc
+#https://stackoverflow.com/questions/12516937/grep-but-only-certain-file-extensions
+grep -r -i --include=\*.java 'notes' ./
+
+grep: command
+-r: recursively
+-i: ignore-case
+--include: all *.txt: text files (escape with \ just in case you have a directory with asterisks in the filenames)
+'searchterm': What to search
+./: Start at current directory.
+
 https://www.tutorialspoint.com/unix/unix-pipes-filters.htm
 #grep + sort + more
 ls -l | grep "nov" | sort +4n
@@ -847,6 +858,13 @@ git add .
 
 #per vedere le modifiche
 git diff
+
+#per vedere le modifiche
+git diff HEAD src/main/java/microservices/book/gateway/GatewayApplication.java
+
+git diff HEAD [filename] //  compare the working directory with local repository.
+git diff [filename] // compare the working directory with index.
+git diff --cached [filename] // compare the index with local repository.
 
 #Before push to confirm the changes
 git commit -m "Messaggio per la commit"
