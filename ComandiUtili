@@ -564,7 +564,11 @@ sudo ./e2fsck -y <corrupt filesystem name>
 nel mio caso: sudo ./e2fsck -y /dev/sda3
 
 # sudo command  (sudo su, sudo su -, sudo -i ) https://askubuntu.com/questions/376199/sudo-su-vs-sudo-i-vs-sudo-bin-bash-when-does-it-matter-which-is-used
+https://it.wikipedia.org/wiki/Su_(Unix)
 sudo su -  
+# Specificando un trattino "-" si indica di avviare una shell di login
+# con -c "riga_di_comando" è possibile specificare loro un comando da eseguire:
+su root -c "mkdir /opt/esempio"
 # The command su is used to switch to another user (s witch u ser), 
 # but you can also switch to the root user by invoking the command with no parameter. 
 # su asks you for the password of the user to switch, 
