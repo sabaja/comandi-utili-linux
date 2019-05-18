@@ -2,6 +2,6 @@
 # i due punti : accedono alla determionata posiszione 
 
 #!/bin/bash
-messaggio=("CiaoCiao" "Mondo!Mondo!")
+messaggio=("Ciao Ciao" "Mondo!Mondo!")
 #da 1 avanti di 4 / e per il sencondo da 6 avanti di 6 
-echo "${messaggio[0]:1:4} ${messaggio[1]:6:6}"
+echo "${messaggio[0]:1:5} ${messaggio[1]:6:6}"
