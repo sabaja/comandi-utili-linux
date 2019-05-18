@@ -48,6 +48,15 @@ chmod o+wx, u-x, g = rx testfile
 #Cambia gruppo
 chgrp group filelist
 
+#Create the docker group.
+sudo groupadd docker
+
+#Add your user to the docker group.
+sudo usermod -aG docker sabaja
+
+#Per rendere subito attivo senza fare logout
+exec su -l sabaja
+
 #Cambia owner
 chown amrood testfile
 
@@ -1219,8 +1228,11 @@ DOCKER
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04 
 https://docker-curriculum.com/
 
+#Installare con il repository
+https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository
+
 #Docker repo instead of the default Ubuntu 16.04 repo
-apt-cache policy docker-ce
+apt-cache policy docker-cesudo service docker start
 
 #Docker should now be installed, the daemon started, and the process enabled to start on boot. Check that it's running:
 sudo systemctl status docker
@@ -1230,12 +1242,55 @@ sudo usermod -aG docker sabaja
 su - sabaja
 id -nG
 
+#https://docs.docker.com/v17.09/engine/installation/linux/linux-postinstall/#configure-docker-to-start-on-boot
+#Abilitare allo startup
+sudo systemctl enable docker
+
+#disabilitare lo startup
+sudo systemctl disable docker
+
+#Per far partire il daemon di docker:
+#After the installation finishes, Docker usually starts up on its own, but for the next part to work you will need to stop it.
+
+sudo service docker stop
+#Then run the daemon with the following command:
+sudo nohup docker daemon -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock &
+
+#install a specifi CE of Docker
+18.06.3~ce~3-0~ubuntu 
+sudo apt install docker-ce=18.06.3~ce~3-0~ubuntu docker-ce-cli=18.06.3~ce~3-0~ubuntu containerd.io
+
+#########################PER FAR PARTIRE DOCKER##########################################
+sudo service docker start
+
+#########################PER DISINSTALLARE DOCKER########################################
+## https://askubuntu.com/questions/935569/how-to-completely-uninstall-docker ############
+#Step 1
+dpkg -l | grep -i docker
+sudo apt purge -y docker-engine docker docker.io docker-ce docker-ce-cli
+sudo apt autoremove -y --purge docker-engine docker docker.io docker-ce docker-ce-cli
+sudo rm -rf /var/lib/docker
+sudo rm /etc/apparmor.d/docker
+sudo groupdel docker
+sudo rm -rf /var/run/docker.sock
+sudo rm -rf /etc/systemd/system/docker.service
+sudo rm -rf /etc/docker
+sudo rm -rf /run/docker
+sudo rm -rf /run/snapd/lock/docker.lock
+
+
+sudo apt-get remove docker docker-engine docker.io containerd runc
+
 #Docker info
 docker info
 
 may be sudo for Ubuntu
 #hello-world
 docker run hello-world
+
+#To try something more ambitious, you can run an Ubuntu container with:
+docker run -it ubuntu bash
+
 
 #run ubuntu bash
 docker run -it ubuntu bash
@@ -1310,6 +1365,16 @@ sha256:ab035e7afa47738710ccfd5ce8ad8a361e7279b604444b98dcd29ff7a2e88a4b
 
 DA CONTINUARE continue:
 Step 8 — Pushing Docker Images to a Docker Repository
+
+Per lanciare jenkins/blueoceans
+docker run \
+  --rm \
+  -u root \
+  -p 8080:8080 \
+  -v jenkins-data:/var/jenkins_home \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v "$HOME":/home \
+  jenkinsci/blueocean
 
 ZIPKIN
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
