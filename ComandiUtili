@@ -483,6 +483,20 @@ printenv [nome variabile]
 #Visualizzare tutte le variabili di ambiente
 printenv
 
+#To set variable only for current shell:
+VARNAME="my value"
+
+#To set it for current shell and all processes started from current shell:
+export VARNAME="my value"      # shorter, less portable version
+
+#To set it permanently for all future bash sessions add such line to your .bashrc file in your $HOME directory.
+#To set it permanently, and system wide (all users, all processes) add set variable in /etc/environment:
+sudo -H gedit /etc/environment
+
+#This file only accepts variable assignments like:
+VARNAME="my value"
+
+Do not use the export keyword here.
 
 #Variabili locali:
 #Creo la variabile PIPPO e gli assegno il valore 1.
@@ -490,6 +504,7 @@ PIPPO='1'
 
 #Per eliminare una variabile d'ambiente locale utilizzo il comando unset:
 unset [ nome variabile ]
+
 
 #Posizione GRUB
 cat /etc/default/grub
@@ -1064,6 +1079,31 @@ sudo service jenkins restart
 sudo apt remove --purge jenkins
 sudo apt remove --auto-remove jenkins
 
+*************************************************************
+*************************************************************
+*************************************************************
+
+Jenkins initial setup is required. An admin user has been created and a password generated.
+Please use the following password to proceed to installation:
+
+af7f4a5ba00f43d9a5bfc0baac30749e
+
+This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
+
+*************************************************************
+*************************************************************
+*************************************************************
+
+docker run \
+  --rm \
+  -u root \
+  -p 8080:8080 \
+  -v jenkins-data:/var/jenkins_home \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v "$HOME":/home \
+  jenkinsci/blueocean
+
+
 BOOTCHART
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 sudo apt-get install bootchart pybootchartgui
@@ -1322,6 +1362,12 @@ docker ps -l
 #Stopping a running or active container is as simple as typing:
 docker stop container-id
 #The container-id can be found in the output from the docker ps command.
+
+Se non si ferma:
+#After a VM restart, I ran lsmod | grep overlay again to confirm overlay kernel module is loaded. After seeing it there, I added --storage-driver=overlay flag to the #DOCKER_OPTS line inside my docker config file (/etc/default/docker) and ran the below commands to restart docker:
+
+sudo /etc/init.d/docker stop
+sudo /etc/init.d/docker start
 
 #run busybox bash
 docker run -it  busybox sh  --- output:
