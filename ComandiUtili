@@ -1576,13 +1576,36 @@ rabbitmq-service.bat stop
 rabbitmq-service.bat install  
 rabbitmq-service.bat start 
 
-#Wireshrak on 18.04
+#WIRESHARK on 18.04
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Now if you selected <Yes> in the earlier section to run Wireshark without root access, then run the following command to add your user to the wireshark group:
 sudo usermod -aG wireshark $(whoami)
 sudo reboot
 
 Now that Wireshark is installed, you can start Wireshark from the Application Menu of Ubuntu.
 $ wireshark
+
+#ANSIBLE
+https://www.miamammausalinux.org/2018/02/primi-passi-con-ansible-parte-1/
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Inventory: Si tratta della lista di macchine sulle quali Ansible può operare ed il path in cui risiede di default: /etc/ansible/hosts 
+
+#Moduli: i moduli possono essere visti come i comandi che eseguiamo sulle macchine. lista completa: https://docs.ansible.com/ansible/latest/modules/list_of_all_modules.html
+
+#Task: i task sono le operazioni che, di fatto, eseguiamo sulle macchine. Possono essere visti come la serie di comandi, in sequenza, che verranno lanciati sulla macchina. Un task è nella sostanza il richiamo di un modulo con particolari opzioni.
+
+#Handler: le operazioni associate agli handler si differenziano dai task poiché non vengono sempre eseguite, ma vengono richiamate come reazione ad un evento di un task. Un banale esempio è quello di avviare un servizio dopo aver installato il software necessario, o riavviarlo dopo la modifica del suo file di configurazione.
+
+#Playbook: i playbook sono una lista di task, handler e delle relative variabili legati a particolari gruppi di macchine in inventario. Vengono utilizzati per avere il “manuale di istruzioni” delle operazioni che Ansible dovrà eseguire.
+
+#Roles: i ruoli sono dei componenti dei playbook che raggruppano operazioni legate tra di loro con uno scopo specifico. Queste vengono di solito unificate per avere più riusabilità delle stesse. Ad esempio, l’installazione, la configurazione e la gestione del servizio NTP possono essere raggruppate in un ruolo, avendo la possibilità di riutilizzare questo ruolo in diversi Playbook.
+
+#Tutto il codice Ansible (e, volendo, anche l’inventario) è scritto in sintassi YAML, che permette una semplice scrittura e lettura del codice con qualisasi editor di testo. Il formato YAML ha precise regole: ad esempio la tabulazione non è accettata, in favore di un’indentazione a 2 spazi.
+YAML: https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html
+
+#USO DI ANSIBLE
+Per prima cosa, quindi, dobbiamo assicurarci che l’host sul quale girerà Ansible possa accedere via ssh senza password ai sistemi in inventario. Generiamo quindi la coppia di chiavi sull’host controller:
+$ ssh-keygen -t rsa
 
 
 #JETTY
