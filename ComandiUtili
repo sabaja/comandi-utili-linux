@@ -1659,6 +1659,40 @@ YAML: https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.ht
 Per prima cosa, quindi, dobbiamo assicurarci che l’host sul quale girerà Ansible possa accedere via ssh senza password ai sistemi in inventario. Generiamo quindi la coppia di chiavi sull’host controller:
 $ ssh-keygen -t rsa
 
+#APACHE KAFKA
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#home kafka linux:
+/home/sabaja/Scrivania/Dev-space/Kafka/kafka_2.12-2.2.0
+
+#Start the server:
+#Zookeper:
+bin/zookeeper-server-start.sh config/zookeeper.properties
+#server:
+bin/kafka-server-start.sh config/server.properties
+
+#Create a topic
+bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic testc
+#check:
+bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+
+#Send some messages:
+bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
+message:This is a message
+message:This is another message
+
+#Start a consumer:
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
+
+#Setting up a multi-broker cluster:
+#First we make a config file for each of the brokers (on Windows use the copy command instead):
+
+1 > cp config/server.properties config/server-1.properties
+2 > cp config/server.properties config/server-2.properties
+
+
+#To see that run the "describe topics" command:
+bin/kafka-topics.sh --describe --bootstrap-server localhost:9092 --topic my-replicated-topic
+
 
 #JETTY
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1702,6 +1736,29 @@ info, i             Show the launcher info.
 restart, r          Restarts the server.
 stop, s             Stops the server gracefully.
 exit, x             Exits the VM.
+
+IntelliJ
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Home ubuntu:
+/snap/intellij-idea-community
+#Lib ubuntu:
+/snap/intellij-idea-community/163/lib
+
+#SHORTCUTS:
+#new object:
+alt+INS
+
+#delete row:
+Ctrl+Y
+
+#Refactor
+Ctrl+Shift+Alt+T
+
+#Find a class, file, or symbol
+#Find and jump to the desired class, file, or symbol.
+Ctrl+N
+Ctrl+Shift+N
+Ctrl+Shift+Alt+N	
 
 REGEX
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
