@@ -1693,6 +1693,8 @@ bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --f
 #To see that run the "describe topics" command:
 bin/kafka-topics.sh --describe --bootstrap-server localhost:9092 --topic my-replicated-topic
 
+#Use Kafka Connect to import/export data
+
 
 #JETTY
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
