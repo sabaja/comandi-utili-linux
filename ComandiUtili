@@ -1750,6 +1750,9 @@ IntelliJ
 #new object:
 alt+INS
 
+#creating getter setter:
+Alt+Insert
+
 #delete row:
 Ctrl+Y
 
