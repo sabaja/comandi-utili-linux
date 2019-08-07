@@ -1759,11 +1759,13 @@ Ctrl+Y
 #Refactor
 Ctrl+Shift+Alt+T
 
-#Find a class, file, or symbol
-#Find and jump to the desired class, file, or symbol.
+
+#Find a class:
 Ctrl+N
-Ctrl+Shift+N
+#file, or symbol:
 Ctrl+Shift+Alt+N	
+#Finds any file or directory by name: 
+Ctrl+Shift+N
 
 REGEX
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
