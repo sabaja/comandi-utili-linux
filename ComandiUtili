@@ -159,6 +159,9 @@ https://www.computerhope.com/unix/utar.htm
 #Eseguire gli aggiornamenti di kernel
 https://wiki.ubuntu.com/Security/Upgrades
 
+eg:
+sudo apt install --install-recommends linux-generic-hwe-18.04 xserver-xorg-hwe-18.04
+
 #come sapere la versione del kernel
 uname -r
 
