@@ -1233,6 +1233,12 @@ IMMAGINI DESKTOP
 
 MONGODB:
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+If you installed via the package manager, 
+the data directory: /var/lib/mongodb 
+log directory: /var/log/mongodb  - are created during the installation.
+configuration file: /etc/mongod.conf
+27017 is the default port the standalone mongod listens on.
+
 Start MongoDB.
 
 Issue the following command to start mongod:
@@ -1258,6 +1264,12 @@ Later, to stop MongoDB, press Control+C in the terminal where the mongod instanc
 
 #start shell
 mongo --shell
+
+#clear shell
+cls
+#(clear screen)
+Ctrl+l 
+
 
 Aliases:
 #start mongo
@@ -1316,6 +1328,75 @@ db.stats()
 	"fsTotalSize" : 412714770432,
 	"ok" : 1
 }
+
+#MONGO SHELL STATEMENTS:
+#You can switch to non-existing databases. When you first store data in the database, such as by creating a collection, MongoDB creates the database. For example, the #following creates both the database myNewDatabase and the collection myCollection during the insert() operation:
+
+use myNewDatabase
+db.myCollection.insert( { x: 1 } );
+
+#bulk insert:
+db.websites.insertMany([
+	{name: "Test – Html.it", _id: "http://www.html.it/development/test", tags: "Test", clicks: 45 }, 
+	{name: "AM – Html.it", _id: "http://www.html.it/development/am", tags: "AM", clicks: 1356 }, 
+	{name: "Jour – Html.it", _id: "http://www.html.it/development/jour", tags: "Jour", clicks: 514351 }, 
+	{name: "Sys – Html.it", _id: "http://www.html.it/development/sys", tags: "Sys", clicks: 512 }, 
+	{name: "Docs – Html.it", _id: "http://www.html.it/development/docs", tags: "Docs", clicks: 1 }
+]);
+
+#To format the printed result, you can add the .pretty() to the operation, as in the following:
+db.myCollection.find().pretty()
+
+#Se vogliamo effettuare una proiezione, ovvero se non ci interessano interi documenti ma solamente alcuni campi, la sintassi del metodo find prevede un ulteriore parametro:
+db.websites.find(  { name: /Dev/ }, { _id: 1, clicks: 1 } )
+
+#introdurre un limite al numero di documenti restituiti:
+db.websites.find(  { clicks: { $lt: 5000 } }, { _id: 1, clicks: 1 } ).limit(10)
+#Altri operatori tipici sono:
+ $gt (maggiore);
+ $ne (non uguale a);
+ $in (ricerca di un valore all’interno di un array).
+
+#Embedded Query on Nested Field ("field.nestedField").
+db.inventory.find( { "size.uom": "in" } )
+db.inventory.find( { "size.h": { $lt: 15 } } )
+#Specify AND Condition
+db.inventory.find( { "size.h": { $lt: 15 }, "size.uom": "in", status: "D" } )
+
+#Array:
+db.inventory.find( { tags: "red" } )
+db.inventory.find( { tags: { $all: ["red", "blank"] } } )
+db.inventory.find( { dim_cm: { $gt: 25 } } )
+db.inventory.find( { dim_cm: { $gt: 15, $lt: 20 } } )
+#The following example queries for all documents where the second element in the array dim_cm is greater than 25 (When querying using dot notation, the field and nested field must be inside quotation marks.)
+db.inventory.find( { "dim_cm.1": { $gt: 25 } } )
+#Use $elemMatch operator:
+db.inventory.find( { dim_cm: { $elemMatch: { $gt: 22, $lt: 30 } } } )
+#Use the $size operator to query for arrays by number of elements.
+db.inventory.find( { "tags": { $size: 3 } } )
+
+#Projections:
+#A projection can explicitly include several fields by setting the <field> to 1 in the projection document. The following operation returns all documents that match the #query. In the result set, only the item, status and, by default, the _id fields return in the matching documents.
+db.inventory.find( { status: "A" }, { item: 1, status: 1 } )
+Suppress _id Field:
+db.inventory.find( { status: "A" }, { item: 1, status: 1, _id: 0 } )
+Return All But the Excluded Fields
+db.inventory.find( { status: "A" }, { status: 0, instock: 0 } )
+Return Specific Fields in Embedded Documents
+db.inventory.find(
+   { status: "A" },
+   { item: 1, status: 1, "size.uom": 1 }
+)
+#Suppress
+db.inventory.find(
+   { status: "A" },
+   { "size.uom": 0 }
+)
+##Project Specific Array Elements in the Returned Array
+#For fields that contain arrays, MongoDB provides the following projection operators for manipulating arrays: $elemMatch, $slice, and $.
+#The following example uses the $slice projection operator to return the last element in the instock array:
+db.inventory.find( { status: "A" }, { item: 1, status: 1, instock: { $slice: -1 } } )
+#$elemMatch, $slice, and $ are the only way to project specific elements to include in the returned array. For instance, you cannot project specific array elements using the #array index; e.g. { "instock.0": 1 } projection will not project the array with the first element.
 
 
 DOCKER
