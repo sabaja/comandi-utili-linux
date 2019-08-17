@@ -1363,7 +1363,7 @@ db.inventory.find( { "size.h": { $lt: 15 } } )
 #Specify AND Condition
 db.inventory.find( { "size.h": { $lt: 15 }, "size.uom": "in", status: "D" } )
 
-#Array:
+##Array:
 db.inventory.find( { tags: "red" } )
 db.inventory.find( { tags: { $all: ["red", "blank"] } } )
 db.inventory.find( { dim_cm: { $gt: 25 } } )
@@ -1375,7 +1375,7 @@ db.inventory.find( { dim_cm: { $elemMatch: { $gt: 22, $lt: 30 } } } )
 #Use the $size operator to query for arrays by number of elements.
 db.inventory.find( { "tags": { $size: 3 } } )
 
-#Projections:
+##Projections:
 #A projection can explicitly include several fields by setting the <field> to 1 in the projection document. The following operation returns all documents that match the #query. In the result set, only the item, status and, by default, the _id fields return in the matching documents.
 db.inventory.find( { status: "A" }, { item: 1, status: 1 } )
 Suppress _id Field:
@@ -1397,6 +1397,57 @@ db.inventory.find(
 #The following example uses the $slice projection operator to return the last element in the instock array:
 db.inventory.find( { status: "A" }, { item: 1, status: 1, instock: { $slice: -1 } } )
 #$elemMatch, $slice, and $ are the only way to project specific elements to include in the returned array. For instance, you cannot project specific array elements using the #array index; e.g. { "instock.0": 1 } projection will not project the array with the first element.
+
+#Write Concern
+Inserimento di dati: insert
+db.users.insert([
+                   {_id: "user1@html.it" , name: "User 1", logins: 31, lastAccess: new Date(2014, 10, 7) },
+                   {_id: "user2@html.it" , name: "User 2" }
+                ],
+                { writeConcern: { w: 0 }
+});
+
+##UPDATE:
+db.users.update(
+    { name: "User 1" },
+    {
+        $inc: { logins: 1},
+        $set: { lastAccess: new Date(2014, 10, 8) }
+    }
+)
+$inc abbiamo richiesto di incrementare i campi indicati
+$set abbiamo voluto modificare i campi specificati successivamente
+$unset, che elimina il campo dal documento
+lista completa:
+
+Name	Description
+$currentDate	Sets the value of a field to current date, either as a Date or a Timestamp.
+$inc	Increments the value of the field by the specified amount.
+$min	Only updates the field if the specified value is less than the existing field value.
+$max	Only updates the field if the specified value is greater than the existing field value.
+$mul	Multiplies the value of the field by the specified amount.
+$rename	Renames a field.
+$set	Sets the value of a field in a document.
+$setOnInsert	Sets the value of a field if an update results in an insert of a document. Has no effect on update operations that modify existing documents.
+$unset	Removes the specified field from a document.
+
+
+(upsert):
+db.users.update(
+    { name: "User 3" },
+    { _id: "user3@html.it", name: "User 3", lastAccess : new Date() },
+    {upsert: true }
+)
+
+Se questo comando trova un utente con nome User 3, lo rimpiazza con il documento specificato nel secondo parametro; altrimenti lo crea ex-novo.
+
+upsert	Se valorizzato a true, consente di effettuare l’inserimento se nessun documento è stato trovato con le caratteristiche indicate. Di default è false
+multi	Se valorizzato a true, consente di specificare se l’update è massivo, o va fatto solo sul primo documento trovato. Di default è false
+writeConcern	Per specificare il Write Concern, come abbiamo visto con il comando insert
+
+##REMOVE:
+Il comando remove:
+
 
 
 DOCKER
