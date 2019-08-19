@@ -1233,12 +1233,18 @@ IMMAGINI DESKTOP
 
 MONGODB:
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Linux:
 If you installed via the package manager, 
 the data directory: /var/lib/mongodb 
 log directory: /var/log/mongodb  - are created during the installation.
 configuration file: /etc/mongod.conf
 27017 is the default port the standalone mongod listens on.
-
+----
+Windows:
+C:\Program Files\MongoDB\Server\4.2\bin\
+double-click on mongo.exe.
+----
+Linux:
 Start MongoDB.
 
 Issue the following command to start mongod:
