@@ -1445,16 +1445,29 @@ db.users.update(
     {upsert: true }
 )
 
+db.books.update({ date : new Date()}, {multi : true});
+
 Se questo comando trova un utente con nome User 3, lo rimpiazza con il documento specificato nel secondo parametro; altrimenti lo crea ex-novo.
 
 upsert	Se valorizzato a true, consente di effettuare l’inserimento se nessun documento è stato trovato con le caratteristiche indicate. Di default è false
 multi	Se valorizzato a true, consente di specificare se l’update è massivo, o va fatto solo sul primo documento trovato. Di default è false
 writeConcern	Per specificare il Write Concern, come abbiamo visto con il comando insert
 
+#Alter Collection massivo
+db.books.aggregate( { $addFields: { date:  new Date("<YYYY-mm-ddTHH:MM:ssZ>")} });
+
+
 ##REMOVE:
 Il comando remove:
 
 
+#Iterazioni:
+for(var i=1; i<=20000; i++) 
+{ 
+	db.books.insert(
+		{ isbn: 223456 + i + '', title : "book " + i }
+	); 
+}
 
 DOCKER
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
