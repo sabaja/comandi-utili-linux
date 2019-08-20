@@ -1,0 +1,56 @@
+https://docker-curriculum.com/
+
+may be sudo for Ubuntu
+
+#hello-world
+docker run hello-world
+
+#run ubuntu bash
+docker run -it ubuntu bash
+
+#The pull command fetches the busybox image 
+docker pull busybox
+
+#Run BusyBox shell
+docker run -it --rm busybox
+#examples:
+docker run busybox printf "%s\n" echo -e "\xaa"
+
+#to see a list of all images on your system.
+docker images
+
+#The docker ps command shows you all containers that are currently running.
+docker ps
+
+#list of all containers that we ran.
+docker ps -a
+
+#run busybox bash
+docker run -it  busybox sh  --- output:
+bash-command:/ # ls -l
+bin   dev   etc   home  proc  root  sys   tmp   usr   var
+
+bash-command:/ # uptime
+14:39:30 up 17:20,  0 users,  load average: 0.01, 0.04, 0.03
+
+Danger Zone: If you're feeling particularly adventurous you can try rm -rf bin in the container. 
+Make sure you run this command in the container and not in your laptop/desktop. 
+Doing this will not make any other commands like ls, echo work. 
+Once everything stops working, you can exit the container (type exit and press Enter) 
+and then start it up again with the docker run -it busybox sh command. 
+Since Docker creates a new container every time, everything should start working again.
+
+#use docker run --help
+docker run --help
+
+#Dopo usati i contenitori bisogna eliminarli:
+docker ps -a (per elencarli)
+
+#per eliminarli uno a uno:
+docker rm b654588613df e744045b1a00 e744045b1a00
+
+#per eliminarli tutti insieme:
+docker rm $(docker ps -a -q -f status=exited)
+
+#ultima versioni di coker:
+docker container prune
