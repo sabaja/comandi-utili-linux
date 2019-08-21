@@ -1916,6 +1916,8 @@ Ctrl+Y
 #Refactor
 Ctrl+Shift+Alt+T
 
+#Format Code
+Ctrl+Alt+L
 
 #Find a class:
 Ctrl+N
