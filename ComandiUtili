@@ -1445,7 +1445,9 @@ db.users.update(
     {upsert: true }
 )
 
-db.books.update({ date : new Date()}, {multi : true});
+db.books.update({ $currentDate: { date : "timestamp" } }, {multi : true});
+
+
 
 Se questo comando trova un utente con nome User 3, lo rimpiazza con il documento specificato nel secondo parametro; altrimenti lo crea ex-novo.
 
@@ -1455,6 +1457,7 @@ writeConcern	Per specificare il Write Concern, come abbiamo visto con il comando
 
 #Alter Collection massivo
 db.books.aggregate( { $addFields: { date:  new Date("<YYYY-mm-ddTHH:MM:ssZ>")} });
+db.books.aggregate( { $addFields: { $currentDate: { date : "timestamp" } } });
 
 
 ##REMOVE:
