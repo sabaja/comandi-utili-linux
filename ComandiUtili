@@ -1926,6 +1926,13 @@ Ctrl+Shift+Alt+N
 #Finds any file or directory by name: 
 Ctrl+Shift+N
 
+#Extract method
+Ctrl+Alt+M
+
+#Organize Imports
+CTRL + SHIFT + O 
+
+
 REGEX
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \b(?!,)\t\b = trova \t ma no ,\t : bisogna utilizzare Negative look ahead a(?!b) a ma non ab
