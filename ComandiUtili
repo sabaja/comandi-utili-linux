@@ -1952,7 +1952,12 @@ CTRL + SHIFT + O
 #Structure Class
 ALT + 7
 
+#Find usage
+ALT + F7
 
+#Search and Replace
+Ctrl + Shift + F
+Ctrl + Shift + R
 
 
 REGEX
