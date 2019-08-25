@@ -1921,8 +1921,25 @@ Ctrl+Alt+L
 
 #Find a class:
 Ctrl+N
+
+#Project View
+Alt+1
+
+#Search everywhere
+DOUBLE SHIFT
+
+#Go to file
+CTRL+SHIFT+N
+
+#Recet Files
+CTRL+E
+
+#Navigation Bar
+Alt+Home
+
 #file, or symbol:
 Ctrl+Shift+Alt+N	
+
 #Finds any file or directory by name: 
 Ctrl+Shift+N
 
@@ -1931,6 +1948,11 @@ Ctrl+Alt+M
 
 #Organize Imports
 CTRL + SHIFT + O 
+
+#Structure Class
+ALT + 7
+
+
 
 
 REGEX
