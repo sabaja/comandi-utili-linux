@@ -1946,8 +1946,10 @@ CTRL + SHIFT + O
 #Structure Class
 ALT + 7
 
-Find  and replace (Options)
+#Find
 CTRL + F
+#Find and replace (Options)
+CTRL + R
 
 #Find usage
 ALT + F7
@@ -1962,6 +1964,13 @@ Ctrl+Shift+N
 
 #Find a class:
 Ctrl+N
+
+#Jump to Previous View Location (Navigate back/forward) in IntelliJ IDEA
+Alt + Shift + ← (Left Arrow)
+or
+Ctrl + E (Recent Files pop-up).
+Also check:
+Ctrl + Shift + E (the Recently Edited Files pop-up).
 
 
 REGEX
