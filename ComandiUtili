@@ -1919,9 +1919,6 @@ Ctrl+Shift+Alt+T
 #Format Code
 Ctrl+Alt+L
 
-#Find a class:
-Ctrl+N
-
 #Project View
 Alt+1
 
@@ -1940,9 +1937,6 @@ Alt+Home
 #file, or symbol:
 Ctrl+Shift+Alt+N	
 
-#Finds any file or directory by name: 
-Ctrl+Shift+N
-
 #Extract method
 Ctrl+Alt+M
 
@@ -1952,12 +1946,22 @@ CTRL + SHIFT + O
 #Structure Class
 ALT + 7
 
+Find  and replace (Options)
+CTRL + F
+
 #Find usage
 ALT + F7
 
-#Search and Replace
+#Search and Replace IN WHOLE PROJECT
+#Find and Replace IN WHOLE PROJECT
 Ctrl + Shift + F
 Ctrl + Shift + R
+
+#Finds any file or directory by name: 
+Ctrl+Shift+N
+
+#Find a class:
+Ctrl+N
 
 
 REGEX
