@@ -1925,9 +1925,6 @@ Alt+1
 #Search everywhere
 DOUBLE SHIFT
 
-#Go to file
-CTRL+SHIFT+N
-
 #Recet Files
 CTRL+E
 
@@ -1948,11 +1945,18 @@ ALT + 7
 
 #Find
 CTRL + F
-#Find and replace (Options)
+
+#Find and replace
 CTRL + R
 
 #Find usage
 ALT + F7
+
+#Find a class by name (Go to Class by Name)
+CTRL + N
+
+#FInd/Go to file
+CTRL+SHIFT+N
 
 #Search and Replace IN WHOLE PROJECT
 #Find and Replace IN WHOLE PROJECT
