@@ -54,3 +54,49 @@ docker rm $(docker ps -a -q -f status=exited)
 
 #ultima versioni di coker:
 docker container prune
+
+Terminology:
+Images - The blueprints of our application which form the basis of containers. In the demo above, we used the docker pull command to download the busybox image.
+
+	Containers - Created from Docker images and run the actual application. We create a container using docker run which we did using the busybox image that we downloaded. A list of running containers can be seen using the docker ps command.
+
+	Docker Daemon - The background service running on the host that manages building, running and distributing Docker containers. The daemon is the process that runs in the operating system to which clients talk to.
+
+	Docker Client - The command line tool that allows the user to interact with the daemon. More generally, there can be other forms of clients too - such as Kitematic which provide a GUI to the users.
+
+	Docker Hub - A registry of Docker images. You can think of the registry as a directory of all available Docker images. If required, one can host their own Docker registries and can use them for pulling images.
+
+An important distinction to be aware of when it comes to images is the difference between base and child images.
+
+	Base images are images that have no parent image, usually images with an OS like ubuntu, busybox or debian.
+
+	Child images are images that build on base images and add additional functionality.
+	
+Then there are official and user images, which can be both base and child images.
+
+	Official images: are images that are officially maintained and supported by the folks at Docker. These are typically one word long. In the list of images above, the python, ubuntu, busybox and hello-world images are official images.
+
+	User images: are images created and shared by users like you and me. They build on base images and add additional functionality. Typically, these are formatted as user/image-name.	
+
+
+#--rm toglie quando esiste già
+docker run --rm prakhar1989/static-site
+
+#to stop the container.
+Ctrl+C 
+
+#-d will detach our terminal, -P will publish all exposed ports to random ports and finally --name corresponds to a name we want to give.
+docker run -d -P --name static-site prakhar1989/static-site
+
+#Specify a custom port
+docker run -p 8888:80 prakhar1989/static-site
+
+#Now we can see the ports by running the docker port [CONTAINER] command
+docker port static-site
+
+#To stop a detached containers
+docker stop static-site
+
+Dockerfile
+_______________________________________________________________________________________________________________________________________________A Dockerfile is a simple text file that contains a list of commands that the Docker client calls while creating an image. 
+It's a simple way to automate the image creation
