@@ -171,6 +171,9 @@ chown sabaja:sabaja mysql_original_back
 #To remove Vuze BitTorrent client, use Synaptic Package Manager or run command
 sudo apt remove vuze azureus && sudo apt autoremove
 
+#The yqq flag is used to suppress output and assumes "Yes" to all prompts
+sudo apt install -yqq
+
 #First, this command will find and delete all files older than 7 days in any subdirectory in /home whose name starts with securityuser:
 # https://www.cyberciti.biz/faq/howto-find-a-directory-linux-command/
 find '/home/securityuser*' -mtime +6 -type f -delete

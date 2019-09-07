@@ -22,6 +22,8 @@ docker images
 #The docker ps command shows you all containers that are currently running.
 docker ps
 
+docker container ls
+
 #list of all containers that we ran.
 docker ps -a
 
@@ -100,3 +102,37 @@ docker stop static-site
 Dockerfile
 _______________________________________________________________________________________________________________________________________________A Dockerfile is a simple text file that contains a list of commands that the Docker client calls while creating an image. 
 It's a simple way to automate the image creation
+
+https://docker-curriculum.com/#webapps-with-docker
+Docker Network
+
+#Exploration of networking
+docker network ls
+
+NETWORK ID          NAME                DRIVER              SCOPE
+c2c695315b3a        bridge              bridge              local
+a875bec5d6fd        host                host                local
+ead0e804a67b        none                null                local
+
+#The bridge network is the network in which containers are run by default. 
+#To validate this, let's inspect the network.
+docker network inspect bridge
+
+...etc
+"Containers": {
+           "277451c15ec183dd939e80298ea4bcf55050328a39b04124b387d668e3ed3943": {
+                "Name": "es",
+                "EndpointID": "5c417a2fc6b13d8ec97b76bbd54aaf3ee2d48f328c3f7279ee335174fbb4d6bb",
+                "MacAddress": "02:42:ac:11:00:02",
+                "IPv4Address": "172.17.0.2/16",
+                "IPv6Address": ""
+            }
+...etc
+
+You can see that our container 277451c15ec1 is listed under the Containers section in the output. What we also see is the IP address this container has been allotted - 172.17.0.2. Is this the IP address that we're looking for? Let's find out by running our flask container and trying to access this IP.
+277451c15ec1
+
+$ docker run -it --rm prakhar1989/foodtrucks-web bash
+root@35180ccc206a:/opt/flask-app# curl 172.17.0.2:9200
+
+
