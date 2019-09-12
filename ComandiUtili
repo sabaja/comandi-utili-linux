@@ -1987,6 +1987,20 @@ Ctrl+Shift+W
 #It is used to go to the location of the last edit
 Ctrl + Shift + Backspace
 
+#The Extract Variable refactoring helps you simplify complicated statements in your code. 
+#For example, in the code fragment below, you can select an expression in the code:
+#(Refactor | Extract | Variable...)
+Ctrl+Alt+V 
+
+#Completa casting
+Ctrl + SHIFT + barra spaziatrice 
+
+#Massimizza la finestra di run output 
+Ctrl + SHIFT + '
+
+#Goto implementation of interface
+Ctrl+Alt+B
+
 
 REGEX
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
