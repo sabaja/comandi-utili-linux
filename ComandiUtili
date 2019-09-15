@@ -1028,16 +1028,37 @@ git branch -a
 #Checkout the branch you want to use.
 git checkout <feature_branch>
 
-Cancella il branch creato in precedenza:
+#Cancella il branch creato in precedenza:
 $ git branch -d develop
 
-Delete a remote GIT branch
+#Delete a remote GIT branch
 git push remote --delete <branch_name>
 git push origin --delete develop
 
+https://stackoverflow.com/questions/3899627/create-git-branch-with-current-changes/3899660
+#Creare un branch nuovo con le modifiche ancora non committate
+git checkout -b topic/newbranch
+
+git checkout -b topic/Feature_No_Oauth2_security_login
+
+#QUINDI se si cerca di fare un pull si ottiene il seguente errore fatal: The current branch feature/NEWBRANCH has no upstream branch. To push the current branch and set the #remote as upstream, use: git push --set-upstream origin feature/feature/NEWBRANCH
+#Quindi si devere fare:
+git push --set-upstream origin feature/feature/NEWBRANCH
 
 #Fare un merge:
 https://stackoverflow.com/questions/14168677/merge-development-branch-with-master
+
+#Differenza Merge Rebase
+
+
+#git bisect - Use binary search to find the commit that introduced a bug
+#Basic bisect commands: start, bad, good
+#As an example, suppose you are trying to find the commit that broke a feature that was known to work in version v2.6.13-rc2 of your project. You start a bisect session as# follows:
+
+      $ git bisect start
+      $ git bisect bad                 # Current version is bad
+      $ git bisect good v2.6.13-rc2    # v2.6.13-rc2 is known to be good
+
 
 copiare un repository esistente:
 git clone https://github.com/sabaja/own-social-multiplication
@@ -1919,11 +1940,17 @@ Ctrl+Y
 #Refactor
 Ctrl+Shift+Alt+T
 
+#Sorround with
+Ctrl+Alt+T
+
 #Format Code
 Ctrl+Alt+L
 
 #Project View
 Alt+1
+
+#Finestra di run output 
+Ctrl + SHIFT + '
 
 #Search everywhere
 DOUBLE SHIFT
@@ -1934,8 +1961,11 @@ CTRL+E
 #Navigation Bar
 Alt+Home
 
-#file, or symbol:
+#search file, or symbol:
 Ctrl+Shift+Alt+N	
+
+#Optimize imports
+Ctrl+Alt+O
 
 #Extract method
 Ctrl+Alt+M
@@ -1995,12 +2025,11 @@ Ctrl+Alt+V
 #Completa casting
 Ctrl + SHIFT + barra spaziatrice 
 
-#Massimizza la finestra di run output 
-Ctrl + SHIFT + '
-
 #Goto implementation of interface
 Ctrl+Alt+B
 
+#Recent file
+Ctrl+E
 
 REGEX
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
