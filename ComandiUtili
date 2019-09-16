@@ -1985,6 +1985,9 @@ CTRL + R
 #Find usage
 ALT + F7
 
+#Highlight every recurrence variable
+CTRL+SHIFT+F7
+
 #Find a class by name (Go to Class by Name)
 CTRL + N
 
