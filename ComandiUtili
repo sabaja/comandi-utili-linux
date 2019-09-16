@@ -1049,6 +1049,12 @@ git push --set-upstream origin feature/feature/NEWBRANCH
 https://stackoverflow.com/questions/14168677/merge-development-branch-with-master
 
 #Differenza Merge Rebase
+https://www.atlassian.com/git/tutorials/merging-vs-rebasing
+
+https://git-scm.com/book/it/v1/Diramazioni-in-Git-Rifondazione
+#Rebase, collocarsi sul branch (in questo caso il master) che si vuole aggiornare: 
+#devo importare un commit da un altro branch e.g: develop e sono sul master:
+git rebase origin/topic/Feature_No_Oauth2_security_login
 
 
 #git bisect - Use binary search to find the commit that introduced a bug
