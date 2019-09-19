@@ -2018,6 +2018,9 @@ Ctrl + E (Recent Files pop-up).
 Also check:
 Ctrl + Shift + E (the Recently Edited Files pop-up).
 
+#Navigating between test and test subject
+Ctrl+Shift+T
+
 #Extend selection, seleziona una parola, poi uno statement, poi un method etc.
 Ctrl+W
 #Processo inverso
@@ -2039,6 +2042,22 @@ Ctrl+Alt+B
 
 #Recent file
 Ctrl+E
+
+#########DEBUG
+#Run in debug mode
+Shift+F9
+#Step Over
+F8
+#Step Into
+F7
+#Force Step Into
+ALT+SHIFT+F7
+#Step Out
+SHIFT+F8
+
+#evaluate some expression
+Alt+SHIFT+F8
+
 
 REGEX
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
