@@ -497,6 +497,13 @@ printenv
 #To set variable only for current shell:
 VARNAME="my value"
 
+CORRETTO:
+add variable at the end of PATH env linux
+https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path
+PATH=$PATH:~/opt/bin
+or
+PATH=~/opt/bin:$PATH
+
 #To set it for current shell and all processes started from current shell:
 export VARNAME="my value"      # shorter, less portable version
 
@@ -1981,6 +1988,9 @@ CTRL + SHIFT + O
 
 #Structure Class
 ALT + 7
+
+#to see the declaration of the current method without the need to scroll to it.
+Alt+Q 
 
 #Find
 CTRL + F
