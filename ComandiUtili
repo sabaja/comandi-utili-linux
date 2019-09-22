@@ -1944,6 +1944,9 @@ IntelliJ
 #new object:
 alt+INS
 
+#Create TestClass / create Subclass / ... 
+alt+Enter
+
 #creating getter setter:
 Alt+Insert
 
@@ -1958,6 +1961,7 @@ Ctrl+Alt+T
 
 #Format Code
 Ctrl+Alt+L
+linux: Ctrl+Alt+SHIFT+F
 
 #Project View
 Alt+1
@@ -2052,6 +2056,7 @@ Ctrl+Alt+B
 
 #Recent file
 Ctrl+E
+
 
 #########DEBUG
 #Run in debug mode
