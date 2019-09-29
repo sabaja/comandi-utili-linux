@@ -2015,6 +2015,7 @@ CTRL + R
 #Find usage
 ALT + F7
 
+#Find in project
 #Highlight every recurrence variable
 CTRL+SHIFT+F7
 
