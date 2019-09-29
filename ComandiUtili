@@ -265,6 +265,12 @@ $ sudo grep security /etc/apt/sources.list | sudo tee /etc/apt/security.sources.
 $ apt-get update
 $ apt-get upgrade -o Dir::Etc::SourceList=/etc/apt/security.sources.list
 
+#Update firmware Ubuntu
+sudo apt update && sudo apt upgrade -y
+sudo service fwupd start
+sudo fwupdmgr refresh
+sudo fwupdmgr update
+
 #come cercare i pacchetti su ubunutu
 dpkg -l
 ls /var/log/ | grep dpkg
@@ -1977,6 +1983,10 @@ CTRL+E
 
 #Navigation Bar
 Alt+Home
+
+# to quickly move between methods in the editor
+Alt+UP arrow 
+Alt+DOWN arrow
 
 #search file, or symbol:
 Ctrl+Shift+Alt+N	
