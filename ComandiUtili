@@ -1997,6 +1997,9 @@ Ctrl+Alt+O
 #Extract method
 Ctrl+Alt+M
 
+#Extract variable
+Ctrl+Alt+V
+
 #Organize Imports
 CTRL + SHIFT + O 
 
