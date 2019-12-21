@@ -1,0 +1,5 @@
+https://confluence.gft.com/pages/viewpage.action?pageId=197579120
+
+vedi:
+--PostMotoreRwaCommand
+--MotoreRwaService::public PostMotoreRwaBin postMotoreRwa(PostMotoreRwaBin bin, BigInteger numVersionCurrent, FasePratica phaseCurrent, CodTipoPratica codTipoPratica) 

@@ -1,0 +1,9 @@
+Se non ha parametri è un Supplier.
+Se ritorna void è un'interfaccia Consumer.
+Se ritorna boolean è un Predicate.
+Se ritorna Object è una Function.
+
+Interface Consumer<T> :: void accept​(T t)
+	
+Se ritorna void è un'interfaccia Consumer: 
+Viene utilizzata per fornire funzionalità di aggiornamento dello stato interno dell’oggetto che gli viene passato, o comunque di usarlo (per esempio stamparne il metodo toString() ). 	
