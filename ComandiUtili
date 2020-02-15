@@ -1771,6 +1771,9 @@ cd zipkin
 # Build the server and also make its dependencies
 ./mvnw -DskipTests --also-make -pl zipkin-server clean install
 
+# Per generare lo swagger
+mvn clean compile -Pcompiler
+ 
 # Run the server
 java -jar ./zipkin-server/target/zipkin-server-*exec.jar
 
