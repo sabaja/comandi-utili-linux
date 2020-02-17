@@ -1128,6 +1128,10 @@ git reset --soft 0ad5a7a6
 --mettere in un branch nuovo il vecchio branch
 git checkout -b old-project-state 0ad5a7a6
 
+--Push con un altro utente
+git push https://'sabaja':'Rinaldi1976'@github.com/sabaja/comandi-utili-linux
+
+
 
 SVN
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
