@@ -1128,8 +1128,9 @@ git reset --soft 0ad5a7a6
 --mettere in un branch nuovo il vecchio branch
 git checkout -b old-project-state 0ad5a7a6
 
-##Per vedere quando è stato creato il branch
-git reflog --date=local
+--Push con un altro utente
+git push https://'sabaja':'Rinaldi1976'@github.com/sabaja/comandi-utili-linux
+
 
 
 SVN
@@ -1774,6 +1775,9 @@ cd zipkin
 # Build the server and also make its dependencies
 ./mvnw -DskipTests --also-make -pl zipkin-server clean install
 
+# Per generare lo swagger
+mvn clean compile -Pcompiler
+ 
 # Run the server
 java -jar ./zipkin-server/target/zipkin-server-*exec.jar
 
@@ -2096,15 +2100,5 @@ Alt+SHIFT+F8
 
 
 REGEX
----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \b(?!,)\t\b = trova \t ma no ,\t : bisogna utilizzare Negative look ahead a(?!b) a ma non ab
-<<<<<<< HEAD:ComandiUtili
-=======
-
-
->>>>>>> 1398e1c4ca4f90696b323a4a96b2a53c78872588:utils
-
-
-EXTERNDER
---
-pass:UmuYgsry9CYt9z!
